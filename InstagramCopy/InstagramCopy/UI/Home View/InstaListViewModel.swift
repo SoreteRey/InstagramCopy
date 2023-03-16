@@ -32,4 +32,9 @@ class InstaListViewModel {
             }
         }
     }
+    func delete(index: Int) {
+        let instaToDelete = instas[index]
+        service.delete(insta: instaToDelete)
+        self.instas.remove(at: index)
+    }
 }
