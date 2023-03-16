@@ -26,10 +26,7 @@ class InstaListTableViewController: UITableViewController {
     var viewModel: InstaListViewModel!
 
     // MARK: - Table view data source
-    
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.instas.count
     }
 
@@ -40,7 +37,7 @@ class InstaListTableViewController: UITableViewController {
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "instasCell", for: indexPath)
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: "instasCell", for: indexPath) as? Insta
 
         // Configure the cell...
 

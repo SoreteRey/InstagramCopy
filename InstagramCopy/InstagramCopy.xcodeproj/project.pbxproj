@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9312EB0F29C2AEAA0012F60B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312EB0E29C2AEAA0012F60B /* Constants.swift */; };
 		9340ABA429C0DF3B00CF5067 /* GoogleService-Info .plist in Resources */ = {isa = PBXBuildFile; fileRef = 9340ABA329C0DF3B00CF5067 /* GoogleService-Info .plist */; };
 		9340ABA729C0E23100CF5067 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9340ABA629C0E23100CF5067 /* FirebaseDatabase */; };
 		9340ABA929C0E23100CF5067 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9340ABA829C0E23100CF5067 /* FirebaseFirestore */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9312EB0E29C2AEAA0012F60B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9340ABA329C0DF3B00CF5067 /* GoogleService-Info .plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info .plist"; path = "../../../../../../../Documents/NFT /GoogleService-Info .plist"; sourceTree = "<group>"; };
 		9340ABB129C1313000CF5067 /* Instagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		9340ABB429C1380300CF5067 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
@@ -53,11 +55,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9312EB1029C2B4110012F60B /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		9340ABB329C137DB00CF5067 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
 				9340ABB929C13D8800CF5067 /* DateHelper.swift */,
 				9340ABB429C1380300CF5067 /* FirebaseService.swift */,
+				9312EB0E29C2AEAA0012F60B /* Constants.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -124,6 +134,7 @@
 			children = (
 				9368ACB829C0DBA600B2854E /* InstaListTableViewController.swift */,
 				9340ABB729C13B6900CF5067 /* InstaListViewModel.swift */,
+				9312EB1029C2B4110012F60B /* Custom Cell */,
 			);
 			path = "Home View";
 			sourceTree = "<group>";
@@ -215,6 +226,7 @@
 				9368ACA129C0D06000B2854E /* SceneDelegate.swift in Sources */,
 				9340ABBA29C13D8800CF5067 /* DateHelper.swift in Sources */,
 				9368ACB929C0DBA600B2854E /* InstaListTableViewController.swift in Sources */,
+				9312EB0F29C2AEAA0012F60B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
