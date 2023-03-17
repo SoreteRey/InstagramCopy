@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mfl-R9-d3N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VlH-B2-3qe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Insta List Table View Controller-->
         <scene sceneID="Ocy-yD-6of">
             <objects>
-                <tableViewController id="scP-C4-HLC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CreateAccount" id="scP-C4-HLC" customClass="InstaListTableViewController" customModule="InstagramCopy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="WV4-su-ven">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instasCell" rowHeight="460" id="iwi-cs-Hrn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instasCell" rowHeight="460" id="iwi-cs-Hrn" customClass="InstaListTableViewCell" customModule="InstagramCopy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="460"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iwi-cs-Hrn" id="NVs-o3-KdJ">
@@ -101,6 +101,11 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="2dJ-SV-hSN" secondAttribute="bottom" constant="8" id="t94-fP-MdW"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentTextLabel" destination="2dJ-SV-hSN" id="xYs-Yy-4oD"/>
+                                    <outlet property="imageViewLabel" destination="y9f-g6-WYF" id="2jf-En-Xqn"/>
+                                    <outlet property="nameLabelTextLabel" destination="pvD-F1-MeO" id="CYB-di-E1B"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -109,9 +114,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="KbY-w0-Nuq">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="Luz-Ng-RNV">
+                            <connections>
+                                <action selector="signOutButtonTapped:" destination="scP-C4-HLC" id="Qxx-rZ-U4u"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="V2L-23-BdR">
                             <connections>
-                                <segue destination="4yh-3Q-EVk" kind="show" id="r8I-UJ-ksI"/>
+                                <segue destination="4yh-3Q-EVk" kind="show" identifier="toDetailVC" id="r8I-UJ-ksI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -137,7 +147,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AHf-D9-2h3">
-                                <rect key="frame" x="8" y="435" width="377" height="34"/>
+                                <rect key="frame" x="8" y="435" width="377" height="83"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -179,22 +189,93 @@
             </objects>
             <point key="canvasLocation" x="965.64885496183206" y="655.63380281690149"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="EJQ-Kr-tET">
+        <!--User Account View Controller-->
+        <scene sceneID="A6k-CV-DBh">
             <objects>
-                <tabBarController id="mfl-R9-d3N" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bmW-1b-pJB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                <viewController storyboardIdentifier="Navigation" id="VlH-B2-3qe" customClass="UserAccountViewController" customModule="InstagramCopy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mGc-F2-W1R">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="2FZ-H6-Cld">
+                                <rect key="frame" x="100" y="375" width="193" height="243"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5z-u0-j6L">
+                                        <rect key="frame" x="30.333333333333343" y="0.0" width="132.66666666666666" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Create Accont"/>
+                                        <connections>
+                                            <action selector="createAccountButtonTapped:" destination="VlH-B2-3qe" eventType="touchUpInside" id="9Ct-Ro-laG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ7-qA-alS">
+                                        <rect key="frame" x="58.666666666666664" y="104.33333333333331" width="75.666666666666686" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
+                                        <connections>
+                                            <action selector="signInButtonTapped:" destination="VlH-B2-3qe" eventType="touchUpInside" id="rgy-da-qvt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c6-5a-e5K">
+                                        <rect key="frame" x="38" y="208.66666666666663" width="117" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Guest Mode">
+                                            <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="guestModeButtonTapped:" destination="VlH-B2-3qe" eventType="touchUpInside" id="lec-Ei-8Sb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cHQ-qs-dzX">
+                                <rect key="frame" x="8" y="75" width="377" height="118"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udC-Ye-klg">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="userEmailTextField:" destination="Bva-SV-MIg" eventType="editingDidEnd" id="aqx-5D-1vF"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Passowrd" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hA5-hb-936">
+                                        <rect key="frame" x="0.0" y="42" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-vl-s20">
+                                        <rect key="frame" x="0.0" y="84" width="377" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="userConfirmPasswordTextField:" destination="Bva-SV-MIg" eventType="editingDidEnd" id="zwe-qy-AHp"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OJw-Hz-nRW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OJw-Hz-nRW" firstAttribute="trailing" secondItem="2FZ-H6-Cld" secondAttribute="trailing" constant="100" id="5PP-2F-p5y"/>
+                            <constraint firstItem="2FZ-H6-Cld" firstAttribute="leading" secondItem="OJw-Hz-nRW" secondAttribute="leading" constant="100" id="FhT-VT-2ic"/>
+                            <constraint firstItem="cHQ-qs-dzX" firstAttribute="top" secondItem="OJw-Hz-nRW" secondAttribute="top" constant="16" id="Gfg-qK-bxS"/>
+                            <constraint firstItem="cHQ-qs-dzX" firstAttribute="leading" secondItem="OJw-Hz-nRW" secondAttribute="leading" constant="8" id="IM2-0g-e3j"/>
+                            <constraint firstItem="OJw-Hz-nRW" firstAttribute="bottom" secondItem="2FZ-H6-Cld" secondAttribute="bottom" constant="200" id="Ocs-Pf-41Y"/>
+                            <constraint firstItem="OJw-Hz-nRW" firstAttribute="trailing" secondItem="cHQ-qs-dzX" secondAttribute="trailing" constant="8" id="S7b-L3-N5h"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <segue destination="khf-Q7-2fI" kind="relationship" relationship="viewControllers" id="xBF-CC-ITO"/>
+                        <outlet property="userEmailTextField" destination="udC-Ye-klg" id="Dow-3G-BkN"/>
+                        <outlet property="userPasswordConfirmTextField" destination="fKv-vl-s20" id="u0O-uP-pCw"/>
+                        <outlet property="userPasswordTextField" destination="hA5-hb-936" id="eIS-BC-Qct"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4AB-2l-gcK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P7J-q2-no0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Bva-SV-MIg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="68" y="-815"/>
+            <point key="canvasLocation" x="1695" y="-815"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mRG-5K-Bn0">
@@ -225,6 +306,9 @@
         <image name="paperplane" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

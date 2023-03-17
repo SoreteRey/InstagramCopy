@@ -11,7 +11,10 @@
 		9312EB1229C2B4F50012F60B /* InstaListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312EB1129C2B4F50012F60B /* InstaListTableViewCell.swift */; };
 		9312EB1529C2B8FA0012F60B /* InstaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312EB1429C2B8FA0012F60B /* InstaDetailViewController.swift */; };
 		9312EB1729C2BAE10012F60B /* InstaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312EB1629C2BAE10012F60B /* InstaDetailViewModel.swift */; };
-		9340ABA429C0DF3B00CF5067 /* GoogleService-Info .plist in Resources */ = {isa = PBXBuildFile; fileRef = 9340ABA329C0DF3B00CF5067 /* GoogleService-Info .plist */; };
+		9312EB2229C4DC090012F60B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9312EB2129C4DC090012F60B /* FirebaseAuth */; };
+		9312EB2529C4DC680012F60B /* UserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312EB2429C4DC680012F60B /* UserAccountViewController.swift */; };
+		9312EB2729C4DC900012F60B /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312EB2629C4DC900012F60B /* UserAccountViewModel.swift */; };
+		9312EB2929C505870012F60B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9312EB2829C505870012F60B /* GoogleService-Info.plist */; };
 		9340ABA729C0E23100CF5067 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9340ABA629C0E23100CF5067 /* FirebaseDatabase */; };
 		9340ABA929C0E23100CF5067 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9340ABA829C0E23100CF5067 /* FirebaseFirestore */; };
 		9340ABAB29C0E23100CF5067 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9340ABAA29C0E23100CF5067 /* FirebaseStorage */; };
@@ -32,7 +35,9 @@
 		9312EB1129C2B4F50012F60B /* InstaListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaListTableViewCell.swift; sourceTree = "<group>"; };
 		9312EB1429C2B8FA0012F60B /* InstaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaDetailViewController.swift; sourceTree = "<group>"; };
 		9312EB1629C2BAE10012F60B /* InstaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaDetailViewModel.swift; sourceTree = "<group>"; };
-		9340ABA329C0DF3B00CF5067 /* GoogleService-Info .plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info .plist"; path = "../../../../../../../Documents/NFT /GoogleService-Info .plist"; sourceTree = "<group>"; };
+		9312EB2429C4DC680012F60B /* UserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewController.swift; sourceTree = "<group>"; };
+		9312EB2629C4DC900012F60B /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		9312EB2829C505870012F60B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9340ABB129C1313000CF5067 /* Instagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		9340ABB429C1380300CF5067 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		9340ABB729C13B6900CF5067 /* InstaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaListViewModel.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 				9340ABA729C0E23100CF5067 /* FirebaseDatabase in Frameworks */,
 				9340ABA929C0E23100CF5067 /* FirebaseFirestore in Frameworks */,
 				9340ABAB29C0E23100CF5067 /* FirebaseStorage in Frameworks */,
+				9312EB2229C4DC090012F60B /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,22 @@
 			path = "Detail View";
 			sourceTree = "<group>";
 		};
+		9312EB2029C4DC090012F60B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9312EB2329C4DC240012F60B /* User Account Views */ = {
+			isa = PBXGroup;
+			children = (
+				9312EB2429C4DC680012F60B /* UserAccountViewController.swift */,
+				9312EB2629C4DC900012F60B /* UserAccountViewModel.swift */,
+			);
+			path = "User Account Views";
+			sourceTree = "<group>";
+		};
 		9340ABB329C137DB00CF5067 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +115,7 @@
 			children = (
 				9368AC9D29C0D06000B2854E /* InstagramCopy */,
 				9368AC9C29C0D06000B2854E /* Products */,
+				9312EB2029C4DC090012F60B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,7 +134,6 @@
 				9340ABB329C137DB00CF5067 /* Helper Files */,
 				9368ACB429C0DAD200B2854E /* UI */,
 				9368ACB229C0D08D00B2854E /* Resources */,
-				9340ABA329C0DF3B00CF5067 /* GoogleService-Info .plist */,
 			);
 			path = InstagramCopy;
 			sourceTree = "<group>";
@@ -125,6 +147,7 @@
 				9368ACA929C0D06200B2854E /* LaunchScreen.storyboard */,
 				9368ACAC29C0D06200B2854E /* Info.plist */,
 				9368ACA429C0D06000B2854E /* Main.storyboard */,
+				9312EB2829C505870012F60B /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -140,6 +163,7 @@
 		9368ACB429C0DAD200B2854E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9312EB2329C4DC240012F60B /* User Account Views */,
 				9368ACB529C0DAEA00B2854E /* Home View */,
 				9312EB1329C2B8D10012F60B /* Detail View */,
 			);
@@ -176,6 +200,7 @@
 				9340ABA629C0E23100CF5067 /* FirebaseDatabase */,
 				9340ABA829C0E23100CF5067 /* FirebaseFirestore */,
 				9340ABAA29C0E23100CF5067 /* FirebaseStorage */,
+				9312EB2129C4DC090012F60B /* FirebaseAuth */,
 			);
 			productName = InstagramCopy;
 			productReference = 9368AC9B29C0D06000B2854E /* InstagramCopy.app */;
@@ -223,8 +248,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9368ACAB29C0D06200B2854E /* LaunchScreen.storyboard in Resources */,
+				9312EB2929C505870012F60B /* GoogleService-Info.plist in Resources */,
 				9368ACA829C0D06200B2854E /* Assets.xcassets in Resources */,
-				9340ABA429C0DF3B00CF5067 /* GoogleService-Info .plist in Resources */,
 				9368ACA629C0D06000B2854E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,11 +261,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9312EB2729C4DC900012F60B /* UserAccountViewModel.swift in Sources */,
 				9340ABB229C1313000CF5067 /* Instagram.swift in Sources */,
 				9340ABB529C1380300CF5067 /* FirebaseService.swift in Sources */,
 				9340ABB829C13B6900CF5067 /* InstaListViewModel.swift in Sources */,
 				9312EB1529C2B8FA0012F60B /* InstaDetailViewController.swift in Sources */,
 				9368AC9F29C0D06000B2854E /* AppDelegate.swift in Sources */,
+				9312EB2529C4DC680012F60B /* UserAccountViewController.swift in Sources */,
 				9368ACA129C0D06000B2854E /* SceneDelegate.swift in Sources */,
 				9340ABBA29C13D8800CF5067 /* DateHelper.swift in Sources */,
 				9368ACB929C0DBA600B2854E /* InstaListTableViewController.swift in Sources */,
@@ -475,6 +502,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9312EB2129C4DC090012F60B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9340ABA529C0E23100CF5067 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		9340ABA629C0E23100CF5067 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9340ABA529C0E23100CF5067 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
